@@ -11,8 +11,9 @@
   home.packages = with pkgs; [
     alacritty
     i3
-    dmenu
+    rofi
     feh
+    picom
     xorg.xinit
     xorg.xrandr
   ];
@@ -20,5 +21,11 @@
   home.file.".xinitrc".text = ''
   exec i3
 '';
+
+  # i3 config
+  xsession.windowManager.i3 = {
+    enable = true;
+    configFile = ./i3/config;
+  };
 }
 
