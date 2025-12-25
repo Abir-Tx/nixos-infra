@@ -38,7 +38,7 @@
   # Picom
   services.picom = {
     enable = true;
-    extraConfig = builtins.readFile ./picom/picom.conf;
+    configFile = ./picom/picom.conf;
   };
 
 
