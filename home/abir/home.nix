@@ -92,6 +92,50 @@
   # This makes ~/.config/alacritty point to your dotfiles/alacritty
   xdg.configFile."alacritty".source = ./alacritty;
 
+
+  # 1. Enable the Program
+  programs.i3status-rust = {
+    enable = true;
+    
+    # 2. Define the Bar named "bottom" (or "top")
+    bars = {
+      bottom = {
+        theme = "ctp-mocha"; # Catppuccin Mocha theme (matches your Alacritty)
+        icons = "awesome6"; # FontAwesome 6 icons
+        
+        blocks = [
+          {
+            block = "disk_space";
+            path = "/";
+            info_type = "available";
+            interval = 60;
+            warning = 20.0;
+            alert = 10.0;
+          }
+          {
+            block = "memory";
+            format = " $icon $mem_used_percents ";
+            format_alt = " $icon_swap $swap_used_percents ";
+          }
+          {
+            block = "cpu";
+            interval = 1;
+          }
+          {
+            block = "net";
+            format = " $icon $ip $signal_strength ";
+            interval = 5;
+          }
+          {
+            block = "time";
+            format = " $timestamp.datetime(f:'%a %d/%m %R') ";
+            interval = 60;
+          }
+        ];
+      };
+    };
+  };
+
   # Don't touch this
   home.stateVersion = "24.05";
 }

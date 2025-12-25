@@ -9,6 +9,27 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+bar {
+    # 1. Use i3status-rs as the backend
+    # We point to the config file Home Manager just generated
+    status_command i3status-rs ~/.config/i3status-rust/config-bottom.toml
+
+    # 2. Styling (Optional - to match the bar background)
+    position bottom
+    
+    colors {
+        background #1e1e2e
+        statusline #cdd6f4
+        separator  #bac2de
+
+        # class             border  backgr. text
+        focused_workspace  #1e1e2e #89b4fa #1e1e2e
+        active_workspace   #1e1e2e #313244 #cdd6f4
+        inactive_workspace #1e1e2e #1e1e2e #a6adc8
+        urgent_workspace   #1e1e2e #f38ba8 #1e1e2e
+    }
+}
+
 set $mod Mod4
 
 # My Variables
