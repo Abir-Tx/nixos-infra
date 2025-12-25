@@ -27,11 +27,5 @@
     enable = true;
     extraConfig = builtins.readFile ./i3/config;
   };
-
-
-  services.picom = {
-    enable = true;
-    extraConfig = builtins.readFile ./picom/picom.conf;
-  };
 }
 
