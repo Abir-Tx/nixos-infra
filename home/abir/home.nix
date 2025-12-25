@@ -25,7 +25,7 @@
   # i3 config
   xsession.windowManager.i3 = {
     enable = true;
-    configFile = ./i3/config;
+    extraConfig = builtins.readFile ./i3/config;
   };
 }
 
