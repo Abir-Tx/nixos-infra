@@ -70,6 +70,23 @@
     };
   };
 
+
+  # picom conf
+  services.picom = {
+    enable = true;
+    
+    # This disables the Nix-generated settings to avoid conflicts
+    # (e.g., if your file sets 'backend = glx' but Nix sets 'backend = xrender')
+    # We basically tell Nix: "Don't try to be smart, just run Picom."
+    package = pkgs.picom; # You can swap this for pkgs.picom-pijulius if you want animations
+    
+    # Do not manage individual settings here (like shadow = true;)
+    # Instead, ignore them and point to your file.
+  };
+
+  # Link your config file to the standard location
+  xdg.configFile."picom/picom.conf".source = ./picom/picom.conf;
+
   # Don't touch this
   home.stateVersion = "24.05";
 }
