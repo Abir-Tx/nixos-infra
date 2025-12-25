@@ -1,0 +1,91 @@
+# Abir's Alacritty Configuration File - Customized and Optimized for Performance and Aesthetics
+#
+#
+
+[general]
+#import = ["./colorschemes/dracula.toml"]
+import = ["./colorschemes/catppuccin-mocha.toml"]
+live_config_reload = true
+working_directory = "~"
+
+[window]
+dynamic_title = true
+opacity = 0.45
+title = "Alacritty"
+decorations = "None"
+padding = { x = 9, y = 9 }
+blur = true
+decorations_theme_variant = "Dark"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[env]
+TERM = "xterm-256color"
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[bell]
+animation = "EaseOutCirc"
+color = "#ffffff"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 11.5
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[mouse]
+hide_when_typing = true
