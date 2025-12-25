@@ -27,5 +27,20 @@
     enable = true;
     extraConfig = builtins.readFile ./i3/config;
   };
+
+
+    # Alacritty
+  programs.alacritty = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ./alacritty/alacritty.yml);
+  };
+
+  # Picom
+  services.picom = {
+    enable = true;
+    extraConfig = builtins.readFile ./picom/picom.conf;
+  };
+
+
 }
 
