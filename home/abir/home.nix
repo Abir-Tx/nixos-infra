@@ -30,6 +30,12 @@
   exec i3
 '';
 
+# SHELL VARIABLES
+home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim"; # Some apps use VISUAL instead of EDITOR
+  };
+
   # i3 config
   #xsession.windowManager.i3 = {
  #   enable = true;
