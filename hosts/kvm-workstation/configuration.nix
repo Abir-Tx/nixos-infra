@@ -39,7 +39,20 @@
   # };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver = {
+	enable = true;
+
+	windowManager.i3.enable = true;
+
+  displayManager.startx.enable = true;
+
+  xkb = {
+    layout = "us";
+  };
+  };
+
+  services.displayManager.defaultSession = "none+i3";
+
 
 
   # Enable Flakes
