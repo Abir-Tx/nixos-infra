@@ -21,6 +21,7 @@
     xorg.xinit
     xorg.xrandr
     font-awesome
+    meslo-lgs-nf
   ];
 
 
@@ -81,6 +82,15 @@
 
   # Link your config file to the standard location
   xdg.configFile."picom/picom.conf".source = ./picom/picom.conf;
+
+
+  # Alacritty Conf
+  # 1. Enable Alacritty (so the binary is installed)
+  programs.alacritty.enable = true;
+
+  # Link the CONFIG folder - alacritty
+  # This makes ~/.config/alacritty point to your dotfiles/alacritty
+  xdg.configFile."alacritty".source = ./alacritty;
 
   # Don't touch this
   home.stateVersion = "24.05";
