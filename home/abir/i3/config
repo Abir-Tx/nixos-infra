@@ -312,7 +312,7 @@ exec alacritty --title "Startup | Abir-Tx"
 #exec dunst &
 ## run picom only if you are using the main repo and if you are using any fork of the picom for animation or rounded corners then consider supplying the specified parameters
 #Params for https://github.com/jonaburg/picom 
-exec picom --config $HOME/.config/picom/picom.conf -b
+#exec picom --config $HOME/.config/picom/picom.conf -b
 
 #Params for https://github.com/pijulius/picom
 #exec picom --animations --animation-window-mass 0.8 --animation-for-open-window zoom --animation-stiffness 250 --experimental-backends --xrender-sync-fence --animation-for-transient-window zoom --vsync -b

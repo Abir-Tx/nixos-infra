@@ -21,11 +21,6 @@
     xorg.xinit
     xorg.xrandr
     font-awesome
-
-    #Fonts required by adi1090x (Otherwise you get empty boxes)
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.iosevka 
-    nerd-fonts.fantasque-sans-mono
   ];
 
 
