@@ -20,8 +20,11 @@
     picom
     xorg.xinit
     xorg.xrandr
+    font-awesome
   ];
 
+
+# Allow startx to work
   home.file.".xinitrc".text = ''
   exec i3
 '';
@@ -33,20 +36,17 @@
  # };
 
 
+
+# 2. The Hybrid Move: Source your existing file
+  # This puts your file at ~/.config/i3/config
+#  xdg.configFile."i3/config".source = ./i3/config;
+
 # The Rice (i3wm Config)
   xsession.windowManager.i3 = {
     enable = true;
-    config = {
-      modifier = "Mod4"; # Windows Key
-      terminal = "alacritty";
-      menu = "rofi -show drun";
-      
-      # Example: Generating keybindings from code
-      keybindings = pkgs.lib.mkOptionDefault {
-        "Mod4+Shift+q" = "kill";
-        "Mod4+f" = "exec firefox";
-      };
-    };
+    config = null;
+    extraConfig = builtins.readFile ./i3/config;
+
   };
 
   # Git Config
