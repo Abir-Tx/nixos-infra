@@ -29,18 +29,15 @@
   };
 
 
-    # Alacritty
-  programs.alacritty = {
-    enable = true;
-    settings = builtins.fromTOML (builtins.readFile ./alacritty/alacritty.yml);
-  };
-
-  # Picom
   services.picom = {
     enable = true;
-    configFile = ./picom/picom.conf;
+    extraConfig = builtins.readFile ./picom/picom.conf;
   };
 
+  programs.alacritty = {
+    enable = true;
+    extraConfig = builtins.readFile ./alacritty/alacritty.yml;
+  };
 
 }
 
