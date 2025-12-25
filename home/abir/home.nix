@@ -36,7 +36,8 @@
 
   programs.alacritty = {
     enable = true;
-    extraConfig = builtins.readFile ./alacritty/alacritty.yml;
+    home.file.".config/alacritty/alacritty.yml".text = builtins.readFile ./alacritty/alacritty.yml;
+
   };
 
 }
